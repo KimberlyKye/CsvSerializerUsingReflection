@@ -4,8 +4,10 @@ using CsvSerializerUsingReflection.Abstractions;
 
 namespace CsvSerializerUsingReflection.Services
 {
+    /// <inheritdoc/>
     public class CsvSerializer : ISerializer
     {
+        /// <inheritdoc/>
         public string Serialize<T>(T obj)
         {
             var type = typeof(T);
@@ -27,6 +29,7 @@ namespace CsvSerializerUsingReflection.Services
             return string.Join(",", values);
         }
 
+        /// <inheritdoc/>
         public T Deserialize<T>(string csv) where T : new()
         {
             var values = csv.Split(',');
